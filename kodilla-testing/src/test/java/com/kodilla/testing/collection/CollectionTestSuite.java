@@ -28,6 +28,7 @@ public class CollectionTestSuite {
         System.out.println("Testing Empty List");
         // Then
         Assert.assertTrue(shouldBeEmptyList.isEmpty());
+        System.out.println("Here should be empty list: " + shouldBeEmptyList);
     }
     @Test
     public void testOddNumbersExterminatorNormalList(){
