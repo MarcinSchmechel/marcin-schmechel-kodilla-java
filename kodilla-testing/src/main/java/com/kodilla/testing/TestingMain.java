@@ -1,24 +1,21 @@
 package com.kodilla.testing;
 
-import com.kodilla.testing.calculator.Calculator;
-import com.kodilla.testing.user.SimpleUser;
+import com.kodilla.testing.shape.Circle;
+import com.kodilla.testing.shape.ShapeCollector;
+import com.kodilla.testing.shape.Square;
+import com.kodilla.testing.shape.Triangle;
 
 public class TestingMain {
     public static void main(String[] args) {
 
-        System.out.println("Test - pierwszy test jednostkowy:");
-        Calculator calculator = new Calculator();
+        ShapeCollector shapeCollector = new ShapeCollector();
 
-        if(calculator.add(5,5) == 10){
-            System.out.println("test OK");
-        } else {
-            System.out.println("Error! - Add test");
-        }
+        shapeCollector.addFigure(new Circle(8));
+        shapeCollector.addFigure(new Triangle(4,5));
+        shapeCollector.addFigure(new Square(8));
 
-        if(calculator.substract(5,5) == 0){
-            System.out.println("test OK");
-        } else {
-            System.out.println("Error! - Substract test");
-        }
+//        Tu wyrzuca mi błąd !
+//        shapeCollector.showFigures();
+//        testShapeCollector.getFigure(0).getField();
     }
 }
