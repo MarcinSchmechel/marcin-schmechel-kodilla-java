@@ -32,15 +32,16 @@ public class ShapeCollectorTestSuite {
         //Then
         Assert.assertTrue(result);
     }
-//    @Test
-//    public void testGetFigure(){
-//        //Given
-//        ShapeCollector testShapeCollector = new ShapeCollector();
-//        // When
-//        testShapeCollector.addFigure(new Circle(2));
-//        testShapeCollector.addFigure(new Triangle(2,2));
-//        Shape chosenShape = testShapeCollector.getFigure(1);
-//        //Then
-//        Assert.assertEquals(new Triangle(2,2),chosenShape);
-//    }
+    @Test
+    public void testGetFigure(){
+        //Given
+        ShapeCollector testShapeCollector = new ShapeCollector();
+        // When
+        testShapeCollector.addFigure(new Circle(2));
+        testShapeCollector.addFigure(new Triangle(2,2));
+        Object testShape = new Triangle(2,2);
+        Object chosenShape = testShapeCollector.getFigure(1);
+        //Then
+        Assert.assertEquals(testShape,chosenShape);
+    }
 }

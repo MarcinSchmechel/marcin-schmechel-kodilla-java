@@ -4,34 +4,43 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ShapeCollector {
-    private Shape shape;
-    private List<Shape> shapeList;
+    private List<Shape> shapeList = new ArrayList<>();
 
     public int getListSize(){
         return shapeList.size();
     }
-    public ShapeCollector() {
-        shapeList = new ArrayList<Shape>();
-    }
 
     public void addFigure(Shape shape){
-       this.shapeList.add(this.shape);
+       this.shapeList.add(shape);
     }
     public boolean removeFigure(Shape shape){
         boolean result = false;
-        if (shapeList.contains(this.shape))
+        if (shapeList.contains(shape))
             {
-                shapeList.remove(this.shape);
+                shapeList.remove(shape);
                 result = true;
             }
         return result;
     }
-    public Shape getFigure(int n){
-            return this.shapeList.get(n);
+
+    public Shape getFigure(int n) {
+        Shape receivedObject = shapeList.get(n);
+        if (receivedObject instanceof Circle) {
+            return (Circle) receivedObject;
+        } else if (receivedObject instanceof Triangle) {
+            return (Triangle) receivedObject;
+        } else if (receivedObject instanceof Square) {
+            return (Square) receivedObject;
+        } else {
+            return null;
         }
+    }
+
     public void showFigures(){
         for(Shape shape: shapeList){
+            System.out.print("Shape: ");
             shape.getShapeName();
+            System.out.print(" - Field: ");
             shape.getField();
         }
     }
@@ -43,14 +52,11 @@ public class ShapeCollector {
 
         ShapeCollector that = (ShapeCollector) o;
 
-        if (!shape.equals(that.shape)) return false;
         return shapeList.equals(that.shapeList);
     }
 
     @Override
     public int hashCode() {
-        int result = shape.hashCode();
-        result = 31 * result + shapeList.hashCode();
-        return result;
+        return shapeList.hashCode();
     }
 }
