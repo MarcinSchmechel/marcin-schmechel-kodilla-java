@@ -89,7 +89,7 @@ public class BookDirectoryTestSuite {
         LibraryDatabase libraryDatabaseMock = mock(LibraryDatabase.class);
         BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);
         LibraryUser testLibraryUser = new LibraryUser("Adam", "Kot", "80010112345");
-        List<Book> listOfBooks = generateListOfNBooks(10);
+        List<Book> listOfBooks = new ArrayList<>();
 
         when(libraryDatabaseMock.listBooksInHandsOf(testLibraryUser)).thenReturn(listOfBooks);
 
@@ -106,10 +106,10 @@ public class BookDirectoryTestSuite {
         LibraryDatabase libraryDatabaseMock = mock(LibraryDatabase.class);
         BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);
         LibraryUser testLibraryUser = new LibraryUser("Adam", "Kot", "80010112345");
-        List<Book> listOfBooks = generateListOfNBooks(10);
+        List<Book> listOfBooks = generateListOfNBooks(1);
 
         when(libraryDatabaseMock.listBooksInHandsOf(testLibraryUser)).thenReturn(listOfBooks);
-        bookLibrary.rentABook(testLibraryUser, listOfBooks.get(0));
+
         // When
         List<Book> theListOfBooks1 = bookLibrary.listBooksInHandsOf(testLibraryUser);
 
@@ -123,16 +123,10 @@ public class BookDirectoryTestSuite {
         LibraryDatabase libraryDatabaseMock = mock(LibraryDatabase.class);
         BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);
         LibraryUser testLibraryUser = new LibraryUser("Adam", "Kot", "80010112345");
-        List<Book> listOfBooks = generateListOfNBooks(10);
+        List<Book> listOfBooks = generateListOfNBooks(5);
 
         when(libraryDatabaseMock.listBooksInHandsOf(testLibraryUser)).thenReturn(listOfBooks);
 
-        bookLibrary.rentABook(testLibraryUser, listOfBooks.get(4));
-        bookLibrary.rentABook(testLibraryUser, listOfBooks.get(5));
-        bookLibrary.rentABook(testLibraryUser, listOfBooks.get(2));
-        bookLibrary.rentABook(testLibraryUser, listOfBooks.get(3));
-        bookLibrary.rentABook(testLibraryUser, listOfBooks.get(1));
-        System.out.println(bookLibrary.listBooksInHandsOf(testLibraryUser));
         // When
         List<Book> theListOfBooks5 = bookLibrary.listBooksInHandsOf(testLibraryUser);
 
