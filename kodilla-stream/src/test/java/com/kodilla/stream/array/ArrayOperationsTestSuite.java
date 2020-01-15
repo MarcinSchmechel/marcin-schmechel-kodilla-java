@@ -18,4 +18,16 @@ public class ArrayOperationsTestSuite {
         //Then
         Assert.assertEquals(expectedAverage,calculatedAverage,0.01);
     }
+    @Test
+    public void testGetAverageEmptyArray(){
+        //Given
+        int[] teatArray = {};
+
+        //When
+        double calculatedAverage = getAverage(teatArray);
+        double expectedAverage = 0;
+
+        //Then
+        Assert.assertEquals(expectedAverage,calculatedAverage,0.01);
+    }
 }
