@@ -6,7 +6,7 @@ import com.kodilla.exception.test.ExceptionHandling;
 import com.kodilla.exception.test.SecondChallenge;
 
 public class ExceptionModuleRunner {
-    public static void main(String[] args) throws ExceptionHandling {
+    public static void main(String[] args) {
         FileReader fileReader = new FileReader();
         try {
             fileReader.readFile();
@@ -19,7 +19,7 @@ public class ExceptionModuleRunner {
             secondChallenge.probablyIWillThrowException(11.5, 3);
         } catch (Exception e){
             System.out.println("Exception: " + e);
-            throw new ExceptionHandling();
+            (new ExceptionHandling()).manageException();
         }
     }
 }
