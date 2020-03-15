@@ -15,6 +15,6 @@ public class GoodPatternsMain {
                 .values()
                 .stream()
                 .flatMap(x -> x.stream())
-                .forEach(System.out::println);
+                .forEach(result -> System.out.print(result + " ! "));
     }
 }
