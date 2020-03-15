@@ -8,7 +8,7 @@ public class ExceptionModuleRunner {
         FileReader fileReader = new FileReader();
         try {
             fileReader.readFile();
-        } catch (FileReaderException e){
+        } catch (FileReaderException e) {
             System.out.println("Problem while reading a file!");
         }
     }

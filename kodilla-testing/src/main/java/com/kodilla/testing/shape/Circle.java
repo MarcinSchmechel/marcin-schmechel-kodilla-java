@@ -3,9 +3,10 @@ package com.kodilla.testing.shape;
 public class Circle implements Shape {
     int diameter;
 
-    public Circle (int diameter){
+    public Circle(int diameter) {
         this.diameter = diameter;
     }
+
     @Override
     public void getShapeName() {
         System.out.print("Circle");
@@ -13,7 +14,7 @@ public class Circle implements Shape {
 
     @Override
     public void getField() {
-        double result = Math.PI * (diameter/2) * (diameter/2);
+        double result = Math.PI * (diameter / 2) * (diameter / 2);
         System.out.println(result);
     }
 

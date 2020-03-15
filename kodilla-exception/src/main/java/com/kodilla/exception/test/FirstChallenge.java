@@ -3,12 +3,12 @@ package com.kodilla.exception.test;
 public class FirstChallenge {
     public double divide(double a, double b) throws ArithmeticException {
         double result;
-        try{
-            if(b == 0){
+        try {
+            if (b == 0) {
                 throw new ArithmeticException();
             }
-            result = a/b;
-        } catch (ArithmeticException e){
+            result = a / b;
+        } catch (ArithmeticException e) {
             System.out.println("You can't divide by zero! Error: " + e);
             result = 0;
         }
@@ -17,6 +17,7 @@ public class FirstChallenge {
 
     /**
      * This main can throw an ArithmeticException!!!
+     *
      * @param args
      */
     public static void main(String[] args) {

@@ -8,18 +8,21 @@ import java.util.Arrays;
 
 public class CollectionTestSuite {
 
-    @Rule public TestName name = new TestName();
+    @Rule
+    public TestName name = new TestName();
 
     @Before
-    public void before(){
+    public void before() {
         System.out.println("Test Case: " + name.getMethodName());
     }
+
     @After
-    public void after(){
+    public void after() {
         System.out.println("Test Case: end");
     }
+
     @Test
-    public void testOddNumbersExterminatorEmptyList(){
+    public void testOddNumbersExterminatorEmptyList() {
         //Given
         OddNumbersExterminator testListForEmptyList = new OddNumbersExterminator();
         ArrayList<Integer> emptyList = new ArrayList<>();
@@ -30,14 +33,15 @@ public class CollectionTestSuite {
         Assert.assertTrue(shouldBeEmptyList.isEmpty());
         System.out.println("Here should be empty list: " + shouldBeEmptyList);
     }
+
     @Test
-    public void testOddNumbersExterminatorNormalList(){
+    public void testOddNumbersExterminatorNormalList() {
         //Given
         OddNumbersExterminator testListForEvenList = new OddNumbersExterminator();
         ArrayList<Integer> allNumbersList = new ArrayList<>();
-        allNumbersList.addAll(Arrays.asList(0,1,2,3,4,5,6,7,8,9));
+        allNumbersList.addAll(Arrays.asList(0, 1, 2, 3, 4, 5, 6, 7, 8, 9));
         ArrayList<Integer> correctNumbersList = new ArrayList<>();
-        correctNumbersList.addAll(Arrays.asList(2,4,6,8));
+        correctNumbersList.addAll(Arrays.asList(2, 4, 6, 8));
         //When
         ArrayList<Integer> shouldBeEvenNumbersList = new ArrayList<>(testListForEvenList.exterminate(allNumbersList));
         System.out.println("Testing Even List");

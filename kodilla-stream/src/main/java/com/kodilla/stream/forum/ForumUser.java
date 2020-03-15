@@ -21,6 +21,7 @@ public final class ForumUser {
                 .map(friend -> friend.getLocation())
                 .collect(Collectors.toSet());
     }
+
     public Set<String> getLocationsOfFriendsOfFriends() {
         return friends.stream()
                 .flatMap(user -> user.getFriends().stream())
@@ -28,6 +29,7 @@ public final class ForumUser {
                 .map(ForumUser::getLocation)
                 .collect(Collectors.toSet());
     }
+
     public void addFriend(ForumUser user) {
         friends.add(user);
     }
@@ -35,6 +37,7 @@ public final class ForumUser {
     public boolean removeFriend(ForumUser user) {
         return friends.remove(user);
     }
+
     public String getUsername() {
         return username;
     }

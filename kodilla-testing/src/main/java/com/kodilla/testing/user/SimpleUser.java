@@ -12,7 +12,8 @@ public class SimpleUser {
     public String getUsername() {
         return username;
     }
-    public String getRealName(){
+
+    public String getRealName() {
         return realName;
     }
 }

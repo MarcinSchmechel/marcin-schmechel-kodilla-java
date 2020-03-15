@@ -6,20 +6,20 @@ import java.util.List;
 public class ShapeCollector {
     private List<Shape> shapeList = new ArrayList<>();
 
-    public int getListSize(){
+    public int getListSize() {
         return shapeList.size();
     }
 
-    public void addFigure(Shape shape){
-       this.shapeList.add(shape);
+    public void addFigure(Shape shape) {
+        this.shapeList.add(shape);
     }
-    public boolean removeFigure(Shape shape){
+
+    public boolean removeFigure(Shape shape) {
         boolean result = false;
-        if (shapeList.contains(shape))
-            {
-                shapeList.remove(shape);
-                result = true;
-            }
+        if (shapeList.contains(shape)) {
+            shapeList.remove(shape);
+            result = true;
+        }
         return result;
     }
 
@@ -36,8 +36,8 @@ public class ShapeCollector {
         }
     }
 
-    public void showFigures(){
-        for(Shape shape: shapeList){
+    public void showFigures() {
+        for (Shape shape : shapeList) {
             System.out.print("Shape: ");
             shape.getShapeName();
             System.out.print(" - Field: ");

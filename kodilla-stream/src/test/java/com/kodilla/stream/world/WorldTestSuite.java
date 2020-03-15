@@ -7,17 +7,17 @@ import java.math.BigDecimal;
 
 public class WorldTestSuite {
     @Test
-    public void testGetPeopleQuantity(){
+    public void testGetPeopleQuantity() {
         //Given
-        Country poland = new Country("Poland","38433600");
-        Country germany = new Country("Germany","82887000");
-        Country france = new Country("France","67372000");
-        Country nigeria = new Country("Nigeria","200963600");
-        Country egypt = new Country("Egypt","98002050");
-        Country tanzania = new Country("Tanzania","51046000");
-        Country china = new Country("China","1400710000");
-        Country india = new Country("India","1210855000");
-        Country indonesia = new Country("Indonesia","261890900");
+        Country poland = new Country("Poland", "38433600");
+        Country germany = new Country("Germany", "82887000");
+        Country france = new Country("France", "67372000");
+        Country nigeria = new Country("Nigeria", "200963600");
+        Country egypt = new Country("Egypt", "98002050");
+        Country tanzania = new Country("Tanzania", "51046000");
+        Country china = new Country("China", "1400710000");
+        Country india = new Country("India", "1210855000");
+        Country indonesia = new Country("Indonesia", "261890900");
 
         Continent europe = new Continent("Europe");
         Continent africa = new Continent("Africa");

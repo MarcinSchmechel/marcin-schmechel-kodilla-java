@@ -30,6 +30,7 @@ public class StatisticsCalculatorTestSuite {
         statisticsCalculator = new StatisticsCalculator();
         System.out.println("Test Case: " + name.getMethodName());
     }
+
     @Test
     public void testCalculateAdvStatisticsWithMockOne() {
         //Given
@@ -37,7 +38,7 @@ public class StatisticsCalculatorTestSuite {
         numberOfPosts = 0;
         numberOfComments = 10;
 
-        for(int i=0; i<numberOfUsers; i++){
+        for (int i = 0; i < numberOfUsers; i++) {
             userNamesTest.add("");
         }
 
@@ -56,14 +57,15 @@ public class StatisticsCalculatorTestSuite {
         double averageNumberOfCommentsPerPostsTest = statisticsCalculator.getAverageNumberOfCommentsPerPosts();
 
         //Then
-        Assert.assertEquals(10,numberOfUsersTest);
-        Assert.assertEquals(0,numberOfPostsTest);
-        Assert.assertEquals(10,numberOfCommentsTest);
+        Assert.assertEquals(10, numberOfUsersTest);
+        Assert.assertEquals(0, numberOfPostsTest);
+        Assert.assertEquals(10, numberOfCommentsTest);
         double doubleTolerance = 0.01;
-        Assert.assertEquals(0.0, averageNumberOfPostsPerUserTest,doubleTolerance);
-        Assert.assertEquals(1.0, averageNumberOfCommentsPerUserTest,doubleTolerance);
-        Assert.assertEquals(0.0, averageNumberOfCommentsPerPostsTest,doubleTolerance);
+        Assert.assertEquals(0.0, averageNumberOfPostsPerUserTest, doubleTolerance);
+        Assert.assertEquals(1.0, averageNumberOfCommentsPerUserTest, doubleTolerance);
+        Assert.assertEquals(0.0, averageNumberOfCommentsPerPostsTest, doubleTolerance);
     }
+
     @Test
     public void testCalculateAdvStatisticsWithMockTwo() {
         //Given
@@ -71,7 +73,7 @@ public class StatisticsCalculatorTestSuite {
         numberOfPosts = 1000;
         numberOfComments = 10;
 
-        for(int i=0; i<numberOfUsers; i++){
+        for (int i = 0; i < numberOfUsers; i++) {
             userNamesTest.add("");
         }
         when(statisticsMock.postsCount()).thenReturn(numberOfPosts);
@@ -89,14 +91,15 @@ public class StatisticsCalculatorTestSuite {
         double averageNumberOfCommentsPerPostsTest = statisticsCalculator.getAverageNumberOfCommentsPerPosts();
 
         //Then
-        Assert.assertEquals(10,numberOfUsersTest);
-        Assert.assertEquals(1000,numberOfPostsTest);
-        Assert.assertEquals(10,numberOfCommentsTest);
+        Assert.assertEquals(10, numberOfUsersTest);
+        Assert.assertEquals(1000, numberOfPostsTest);
+        Assert.assertEquals(10, numberOfCommentsTest);
         double doubleTolerance = 0.01;
-        Assert.assertEquals(100.0, averageNumberOfPostsPerUserTest,doubleTolerance);
-        Assert.assertEquals(1.0, averageNumberOfCommentsPerUserTest,doubleTolerance);
-        Assert.assertEquals(0.01, averageNumberOfCommentsPerPostsTest,doubleTolerance);
+        Assert.assertEquals(100.0, averageNumberOfPostsPerUserTest, doubleTolerance);
+        Assert.assertEquals(1.0, averageNumberOfCommentsPerUserTest, doubleTolerance);
+        Assert.assertEquals(0.01, averageNumberOfCommentsPerPostsTest, doubleTolerance);
     }
+
     @Test
     public void testCalculateAdvStatisticsWithMockThree() {
         //Given
@@ -104,7 +107,7 @@ public class StatisticsCalculatorTestSuite {
         numberOfPosts = 10;
         numberOfComments = 0;
 
-        for(int i=0; i<numberOfUsers; i++){
+        for (int i = 0; i < numberOfUsers; i++) {
             userNamesTest.add("");
         }
         when(statisticsMock.postsCount()).thenReturn(numberOfPosts);
@@ -122,14 +125,15 @@ public class StatisticsCalculatorTestSuite {
         double averageNumberOfCommentsPerPostsTest = statisticsCalculator.getAverageNumberOfCommentsPerPosts();
 
         //Then
-        Assert.assertEquals(10,numberOfUsersTest);
-        Assert.assertEquals(10,numberOfPostsTest);
-        Assert.assertEquals(0,numberOfCommentsTest);
+        Assert.assertEquals(10, numberOfUsersTest);
+        Assert.assertEquals(10, numberOfPostsTest);
+        Assert.assertEquals(0, numberOfCommentsTest);
         double doubleTolerance = 0.01;
-        Assert.assertEquals(1.0, averageNumberOfPostsPerUserTest,doubleTolerance);
-        Assert.assertEquals(0.0, averageNumberOfCommentsPerUserTest,doubleTolerance);
-        Assert.assertEquals(0.0, averageNumberOfCommentsPerPostsTest,doubleTolerance);
+        Assert.assertEquals(1.0, averageNumberOfPostsPerUserTest, doubleTolerance);
+        Assert.assertEquals(0.0, averageNumberOfCommentsPerUserTest, doubleTolerance);
+        Assert.assertEquals(0.0, averageNumberOfCommentsPerPostsTest, doubleTolerance);
     }
+
     @Test
     public void testCalculateAdvStatisticsWithMockFour() {
         //Given
@@ -137,7 +141,7 @@ public class StatisticsCalculatorTestSuite {
         numberOfPosts = 100;
         numberOfComments = 10;
 
-        for(int i=0; i<numberOfUsers; i++){
+        for (int i = 0; i < numberOfUsers; i++) {
             userNamesTest.add("");
         }
         when(statisticsMock.postsCount()).thenReturn(numberOfPosts);
@@ -155,14 +159,15 @@ public class StatisticsCalculatorTestSuite {
         double averageNumberOfCommentsPerPostsTest = statisticsCalculator.getAverageNumberOfCommentsPerPosts();
 
         //Then
-        Assert.assertEquals(10,numberOfUsersTest);
-        Assert.assertEquals(100,numberOfPostsTest);
-        Assert.assertEquals(10,numberOfCommentsTest);
+        Assert.assertEquals(10, numberOfUsersTest);
+        Assert.assertEquals(100, numberOfPostsTest);
+        Assert.assertEquals(10, numberOfCommentsTest);
         double doubleTolerance = 0.01;
-        Assert.assertEquals(10.0, averageNumberOfPostsPerUserTest,doubleTolerance);
-        Assert.assertEquals(1.0, averageNumberOfCommentsPerUserTest,doubleTolerance);
-        Assert.assertEquals(0.1, averageNumberOfCommentsPerPostsTest,doubleTolerance);
+        Assert.assertEquals(10.0, averageNumberOfPostsPerUserTest, doubleTolerance);
+        Assert.assertEquals(1.0, averageNumberOfCommentsPerUserTest, doubleTolerance);
+        Assert.assertEquals(0.1, averageNumberOfCommentsPerPostsTest, doubleTolerance);
     }
+
     @Test
     public void testCalculateAdvStatisticsWithMockFive() {
         //Given
@@ -170,7 +175,7 @@ public class StatisticsCalculatorTestSuite {
         numberOfPosts = 10;
         numberOfComments = 100;
 
-        for(int i=0; i<numberOfUsers; i++){
+        for (int i = 0; i < numberOfUsers; i++) {
             userNamesTest.add("");
         }
         when(statisticsMock.postsCount()).thenReturn(numberOfPosts);
@@ -188,14 +193,15 @@ public class StatisticsCalculatorTestSuite {
         double averageNumberOfCommentsPerPostsTest = statisticsCalculator.getAverageNumberOfCommentsPerPosts();
 
         //Then
-        Assert.assertEquals(10,numberOfUsersTest);
-        Assert.assertEquals(10,numberOfPostsTest);
-        Assert.assertEquals(100,numberOfCommentsTest);
+        Assert.assertEquals(10, numberOfUsersTest);
+        Assert.assertEquals(10, numberOfPostsTest);
+        Assert.assertEquals(100, numberOfCommentsTest);
         double doubleTolerance = 0.01;
-        Assert.assertEquals(1.0, averageNumberOfPostsPerUserTest,doubleTolerance);
-        Assert.assertEquals(10.0, averageNumberOfCommentsPerUserTest,doubleTolerance);
-        Assert.assertEquals(10.0, averageNumberOfCommentsPerPostsTest,doubleTolerance);
+        Assert.assertEquals(1.0, averageNumberOfPostsPerUserTest, doubleTolerance);
+        Assert.assertEquals(10.0, averageNumberOfCommentsPerUserTest, doubleTolerance);
+        Assert.assertEquals(10.0, averageNumberOfCommentsPerPostsTest, doubleTolerance);
     }
+
     @Test
     public void testCalculateAdvStatisticsWithMockSix() {
         //Given
@@ -218,14 +224,15 @@ public class StatisticsCalculatorTestSuite {
         double averageNumberOfCommentsPerPostsTest = statisticsCalculator.getAverageNumberOfCommentsPerPosts();
 
         //Then
-        Assert.assertEquals(0,numberOfUsersTest);
-        Assert.assertEquals(10,numberOfPostsTest);
-        Assert.assertEquals(10,numberOfCommentsTest);
+        Assert.assertEquals(0, numberOfUsersTest);
+        Assert.assertEquals(10, numberOfPostsTest);
+        Assert.assertEquals(10, numberOfCommentsTest);
         double doubleTolerance = 0.01;
-        Assert.assertEquals(0.0, averageNumberOfPostsPerUserTest,doubleTolerance);
-        Assert.assertEquals(0.0, averageNumberOfCommentsPerUserTest,doubleTolerance);
-        Assert.assertEquals(1.0, averageNumberOfCommentsPerPostsTest,doubleTolerance);
+        Assert.assertEquals(0.0, averageNumberOfPostsPerUserTest, doubleTolerance);
+        Assert.assertEquals(0.0, averageNumberOfCommentsPerUserTest, doubleTolerance);
+        Assert.assertEquals(1.0, averageNumberOfCommentsPerPostsTest, doubleTolerance);
     }
+
     @Test
     public void testCalculateAdvStatisticsWithMockSeven() {
         //Given
@@ -233,7 +240,7 @@ public class StatisticsCalculatorTestSuite {
         numberOfPosts = 10;
         numberOfComments = 10;
 
-        for(int i=0; i<numberOfUsers; i++){
+        for (int i = 0; i < numberOfUsers; i++) {
             userNamesTest.add("");
         }
         when(statisticsMock.postsCount()).thenReturn(numberOfPosts);
@@ -251,12 +258,12 @@ public class StatisticsCalculatorTestSuite {
         double averageNumberOfCommentsPerPostsTest = statisticsCalculator.getAverageNumberOfCommentsPerPosts();
 
         //Then
-        Assert.assertEquals(100,numberOfUsersTest);
-        Assert.assertEquals(10,numberOfPostsTest);
-        Assert.assertEquals(10,numberOfCommentsTest);
+        Assert.assertEquals(100, numberOfUsersTest);
+        Assert.assertEquals(10, numberOfPostsTest);
+        Assert.assertEquals(10, numberOfCommentsTest);
         double doubleTolerance = 0.01;
-        Assert.assertEquals(0.1, averageNumberOfPostsPerUserTest,doubleTolerance);
-        Assert.assertEquals(0.1, averageNumberOfCommentsPerUserTest,doubleTolerance);
-        Assert.assertEquals(1.0, averageNumberOfCommentsPerPostsTest,doubleTolerance);
+        Assert.assertEquals(0.1, averageNumberOfPostsPerUserTest, doubleTolerance);
+        Assert.assertEquals(0.1, averageNumberOfCommentsPerUserTest, doubleTolerance);
+        Assert.assertEquals(1.0, averageNumberOfCommentsPerPostsTest, doubleTolerance);
     }
 }

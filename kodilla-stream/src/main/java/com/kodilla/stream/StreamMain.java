@@ -10,9 +10,9 @@ import java.util.stream.Collectors;
 public class StreamMain {
     public static void main(String[] args) {
         Forum theForumUserList = new Forum();
-        Map <Integer, Object> theResultForumUserList = theForumUserList.getUserList().stream()
+        Map<Integer, Object> theResultForumUserList = theForumUserList.getUserList().stream()
                 .filter(forumUser -> forumUser.getSex() == 'M')
-                .filter(forumUser -> forumUser.getDateOfBirth().getYear() < LocalDate.now().getYear()-20)
+                .filter(forumUser -> forumUser.getDateOfBirth().getYear() < LocalDate.now().getYear() - 20)
                 .filter(forumUser -> forumUser.getNumberOfPublishedPosts() > 0)
                 .collect(Collectors.toMap(ForumUser::getUserIdentifier, forumUser -> forumUser));
 
@@ -20,5 +20,5 @@ public class StreamMain {
         theResultForumUserList.entrySet().stream()
                 .map(entry -> "Identifier number: " + entry.getKey() + " - " + entry.getValue())
                 .forEach(System.out::println);
-        }
+    }
 }
