@@ -9,7 +9,6 @@ public class ProducerGlutenFreeShop extends ProducerMainClass implements Produce
     @Override
     public void process() {
         System.out.println("Gluten Free Shop - process");
-        isCompleted = true;
     }
 }
 

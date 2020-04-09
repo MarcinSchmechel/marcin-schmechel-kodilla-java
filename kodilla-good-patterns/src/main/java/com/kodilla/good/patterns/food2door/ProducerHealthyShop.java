@@ -9,7 +9,6 @@ public class ProducerHealthyShop extends ProducerMainClass implements ProducerIn
     @Override
     public void process() {
         System.out.println("Healthy shop - process");
-        isCompleted = true;
     }
 }
 

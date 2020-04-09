@@ -10,6 +10,5 @@ public class ProducerExtraFoodShop extends ProducerMainClass implements Producer
     @Override
     public void process() {
         System.out.println("Extra Food Shop - process");
-        isCompleted=true;
     }
 }

@@ -5,7 +5,6 @@ public class ProducerMainClass implements ProducerInterface{
     private String producerName;
     private String productName;
     private int productQuantity;
-    protected boolean isCompleted = false;
 
     public ProducerMainClass(String producerName, String productName, int productQuantity) {
         this.producerName = producerName;
@@ -23,6 +22,10 @@ public class ProducerMainClass implements ProducerInterface{
 
     public int getProductQuantity() {
         return productQuantity;
+    }
+
+    public boolean isAvailable(){
+        return true;
     }
 
     @Override

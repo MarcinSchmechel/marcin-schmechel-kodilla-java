@@ -1,9 +1,6 @@
 package com.kodilla.good.patterns;
 
-import com.kodilla.good.patterns.food2door.FoodOrderProcessor;
-import com.kodilla.good.patterns.food2door.ProducerExtraFoodShop;
-import com.kodilla.good.patterns.food2door.ProducerGlutenFreeShop;
-import com.kodilla.good.patterns.food2door.ProducerHealthyShop;
+import com.kodilla.good.patterns.food2door.*;
 
 public class GoodPatternsMain {
     public static void main(String[] args) {
@@ -16,6 +13,10 @@ public class GoodPatternsMain {
         foodOrderProcessor.process(producerExtraFoodShop);
         foodOrderProcessor.process(producerHealthyShop);
         foodOrderProcessor.process(producerGlutenFreeShop);
+
+        OrderRequest orderRequest = new OrderRequest("Kapcie");
+
+        foodOrderProcessor.order(producerExtraFoodShop, orderRequest);
     }
 }
 

@@ -6,12 +6,13 @@ public class FoodOrderProcessor {
         System.out.println("Producer: " + producer.getProducerName() + " - Order: " + producer.getProductName()
                 + " - " + producer.getProductQuantity() + " pcs.");
         producer.process();
+    }
+    public void order(ProducerMainClass producer, OrderRequest orderRequest){
+        if(producer.isAvailable()) {
+            System.out.println(orderRequest.getProductName() + " - product available in: " + producer.getProducerName() + ". Order placed");
 
-        if(producer.isCompleted) {
-            System.out.println("Order completed");
         } else {
-            System.out.println("Order not completed");
+            System.out.println("Order not available");
         }
     }
-
 }
