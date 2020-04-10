@@ -2,14 +2,10 @@ package com.kodilla.good.patterns.food2door;
 
 public class FoodOrderProcessor {
 
-    public void process(ProducerMainClass producer){
-        System.out.println("Producer: " + producer.getProducerName() + " - Order: " + producer.getProductName()
-                + " - " + producer.getProductQuantity() + " pcs.");
-        producer.process();
-    }
-    public void order(ProducerMainClass producer, OrderRequest orderRequest){
+    public void order(OrderRequest orderRequest){
+        Producer producer = ProducerFactory.getProducer(orderRequest.getProducer());
         if(producer.isAvailable()) {
-            System.out.println(orderRequest.getProductName() + " - product available in: " + producer.getProducerName() + ". Order placed");
+            System.out.println(orderRequest.getProductName() + " - product available in: " + orderRequest.getProducer() + ". Order placed");
 
         } else {
             System.out.println("Order not available");
