@@ -7,7 +7,7 @@ public class GoodPatternsMain {
         FlightFinder findFlight = new FlightFinder();
         System.out.println("Flights from: Warszawa" + "\n" + findFlight.getFrom("Warszawa") + "\n");
         System.out.println("Flights to: Lublin" + "\n" + findFlight.getTo("Lublin")+ "\n");
-        System.out.println("Flights trough: Słupsk" + "\n" + findFlight.getTrough("Słupsk")+ "\n");
+        System.out.println("Flights: Reda-> Słupsk -> Lublin" + "\n" + findFlight.getTrough("Reda","Słupsk","Lublin")+ "\n");
     }
 }
 

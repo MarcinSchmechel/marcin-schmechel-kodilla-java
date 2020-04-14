@@ -4,10 +4,9 @@ import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class FlightFinder {
-    private String startingAirport;
-    private String destinationAirport;
     private List<FlightConnection> flightConnectionList;
 
     public FlightFinder(){
@@ -37,10 +36,16 @@ public class FlightFinder {
                 .filter(x->x.getDestinationAirport().equals(destinationAirport))
                 .collect(Collectors.toList());
     }
-    public List<FlightConnection> getTrough(String Airport){
-        return flightConnectionList
-                .stream().sorted(Comparator.comparing(FlightConnection::getStartingAirport))
-                .filter(x->x.getDestinationAirport().equals(Airport) || x.getStartingAirport().equals(Airport))
+    public List<FlightConnection> getTrough(String startingAirport, String Airport,String destinationAirport){
+
+        List<FlightConnection> flightFromTrough = flightConnectionList
+                .stream()
+                .filter(x->x.getStartingAirport().equals(startingAirport) && x.getDestinationAirport().equals(Airport))
                 .collect(Collectors.toList());
+        List<FlightConnection> flightTroughTo = flightConnectionList
+                .stream()
+                .filter(x->x.getStartingAirport().equals(Airport) && x.getDestinationAirport().equals(destinationAirport))
+                .collect(Collectors.toList());
+        return Stream.concat(flightFromTrough.stream(),flightTroughTo.stream()).collect(Collectors.toList());
     }
 }
