@@ -9,6 +9,9 @@ public class TaskList {
     public TaskList(){
         tasks = new ArrayList<>();
     }
+    public void addTask(){
+        tasks.add("Task");
+    }
 
     @Override
     public String toString() {

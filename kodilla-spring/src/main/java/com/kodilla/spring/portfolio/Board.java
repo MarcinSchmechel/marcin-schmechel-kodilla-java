@@ -15,7 +15,9 @@ public class Board {
         System.out.println(inProgressList);
         System.out.println(doneList);
     }
-
+    public void addTask(TaskList taskList){
+        taskList.addTask();
+    }
     public TaskList getToDoList() {
         return toDoList;
     }
