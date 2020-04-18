@@ -4,7 +4,7 @@ public class FlightConnection {
     private String startingAirport;
     private String destinationAirport;
 
-    public FlightConnection(String startingAirport, String destinationAirport){
+    public FlightConnection(String startingAirport, String destinationAirport) {
         this.startingAirport = startingAirport;
         this.destinationAirport = destinationAirport;
     }
@@ -36,6 +36,6 @@ public class FlightConnection {
 
     @Override
     public String toString() {
-        return  "\n" + startingAirport + " -> " + destinationAirport;
+        return "\n" + startingAirport + " -> " + destinationAirport;
     }
 }

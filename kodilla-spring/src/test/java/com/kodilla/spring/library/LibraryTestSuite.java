@@ -35,6 +35,7 @@ public class LibraryTestSuite {
         //Then
         //do nothing
     }
+
     @Test
     public void testContext() {
         //Given
@@ -47,6 +48,7 @@ public class LibraryTestSuite {
                 .forEach(System.out::println);
         System.out.println("<< ===== Beans list ====");
     }
+
     @Test
     public void testContext2() {
         //Given
