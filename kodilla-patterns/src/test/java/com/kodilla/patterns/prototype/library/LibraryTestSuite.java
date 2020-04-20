@@ -36,6 +36,7 @@ public class LibraryTestSuite {
     //When
         library.getBooks().remove(book3);
     //Then
+
         System.out.println("Library 1" + library.getBooks());
         System.out.println("Library 2" + shallowClonedLibrary.getBooks());
         System.out.println("Library 3" + deepClonedLibrary.getBooks());

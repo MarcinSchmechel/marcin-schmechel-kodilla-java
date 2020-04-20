@@ -13,6 +13,13 @@ public final class Book {
         this.publicationDate = publicationDate;
     }
 
+    public Book(Object o){
+        Book book = (Book) o;
+        this.title = book.getTitle();
+        this.author = book.getAuthor();
+        this.publicationDate = book.getPublicationDate();
+    }
+
     public String getTitle() {
         return title;
     }
