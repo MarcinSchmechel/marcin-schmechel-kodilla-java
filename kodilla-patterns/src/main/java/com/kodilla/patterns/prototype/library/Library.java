@@ -3,7 +3,6 @@ package com.kodilla.patterns.prototype.library;
 import com.kodilla.patterns.prototype.Prototype;
 
 import java.util.HashSet;
-import java.util.Iterator;
 import java.util.Set;
 
 public final class Library extends Prototype {
@@ -34,10 +33,9 @@ public final class Library extends Prototype {
         Library deepClonedLibrary = (Library)super.clone();
         Set<Book> clonedBooks = new HashSet<>();
 
-        Iterator bookSet = books.iterator();
-            while (bookSet.hasNext()) {
-                clonedBooks.add(new Book(bookSet.next()));
-            }
+        for (Book book : books) {
+            clonedBooks.add(new Book(book));
+        }
         deepClonedLibrary.books = new HashSet<>();
         deepClonedLibrary.books.addAll(clonedBooks);
         return deepClonedLibrary;

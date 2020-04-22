@@ -13,8 +13,7 @@ public final class Book {
         this.publicationDate = publicationDate;
     }
 
-    public Book(Object o){
-        Book book = (Book) o;
+    public Book(Book book){
         this.title = book.getTitle();
         this.author = book.getAuthor();
         this.publicationDate = book.getPublicationDate();
