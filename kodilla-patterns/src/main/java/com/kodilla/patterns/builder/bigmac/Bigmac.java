@@ -6,10 +6,10 @@ import java.util.List;
 public class Bigmac {
     private final String bun; // sezam, zwykłą
     private final int burgers; // ilość burgerów
-    private final String sauce; //none, standard, 1000 wysp, barbecue
+    private final Sauce sauce; //none, standard, 1000 wysp, barbecue
     private final List<String> ingredients; //sałata, cebula, bekon, ogórek, papryczki chilli, pieczarki, krewetki, ser
 
-    private Bigmac(String bun, int burgers, String sauce, List<String> ingredients) {
+    private Bigmac(String bun, int burgers, Sauce sauce, List<String> ingredients) {
         this.bun = bun;
         this.burgers = burgers;
         this.sauce = sauce;
@@ -18,7 +18,7 @@ public class Bigmac {
     public static class BigmacBuilder {
         private String bun;
         private int burgers;
-        private String sauce;
+        private Sauce sauce;
         private List<String> ingredients = new ArrayList<>();
 
         public BigmacBuilder bun(String bun) {
@@ -31,7 +31,7 @@ public class Bigmac {
             return this;
         }
 
-        public BigmacBuilder sauce(String sauce) {
+        public BigmacBuilder sauce(Sauce sauce) {
             this.sauce = sauce;
             return this;
         }
@@ -55,7 +55,7 @@ public class Bigmac {
         return burgers;
     }
 
-    public String getSause() {
+    public Sauce getSause() {
         return sauce;
     }
 

@@ -11,7 +11,7 @@ public class BigmacTestSuite {
         //Given
         Bigmac bigmac = new BigmacBuilder()
                 .bun("Sezam")
-                .sauce("standard")
+                .sauce(Sauce.KETCHUP)
                 .burgersQuantity(3)
                 .ingredient("Cebula")
                 .ingredient("Bekon")
