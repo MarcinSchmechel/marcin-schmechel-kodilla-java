@@ -11,6 +11,12 @@ import java.util.List;
                 " WHERE SUBSTRING(COMPANY_NAME, 1, 3) LIKE :THREELETTERS",
         resultClass = Company.class
 )
+@NamedNativeQuery(
+        name = "Company.retrieveCompaniesContainsLetters",
+        query = "SELECT * FROM COMPANIES" +
+                " WHERE COMPANY_NAME LIKE CONCAT('%', :LETTERS, '%')",
+        resultClass = Company.class
+)
 
 @Entity
 @Table(name = "COMPANIES")
